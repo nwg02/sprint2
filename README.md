@@ -1,44 +1,47 @@
-# GISU Sprint 2 Java Prototype
+# GISU Sprint 2 Prototype
 
-This is a minimal Java + Spring Boot + MySQL web prototype for the Sprint 2 assignment. It includes registration, login/logout, session-based login state, a basic insurance assessment saved to MySQL, and insurance plans loaded from MySQL.
+This project is a Java Spring Boot application that uses MySQL to store user accounts and insurance assessment results. Users can register, log in, complete an insurance assessment, and view available insurance plans.
 
 ## Requirements
-- Java 17 or newer
-- Maven
-- MySQL 8 or newer
 
-These tools and Maven dependencies require an internet connection for the initial setup. Wait for Wi-Fi if you are conserving hotspot data.
+* Java 17 or newer
+* Maven
+* MySQL 8 or newer
 
-## 1. Create the database
-In MySQL, run `database/schema.sql`. This creates the `gisu` database, its four tables, and sample insurance plans.
+An internet connection is needed the first time Maven downloads the project's dependencies.
 
-## 2. Configure database access
-Open `src/main/resources/application.properties` and update the MySQL username/password to match your local MySQL installation.
+## 1. Set Up the Database
 
-Default local settings:
-- database: `gisu`
-- username: `root`
-- password: empty
+Run `database/schema.sql` in MySQL. This creates the `gisu` database, the required tables, and sample insurance plans.
 
-## 3. Run the application
-Open a terminal in this project folder and run:
+## 2. Configure MySQL
+
+Open `src/main/resources/application.properties` and set the database username and password for your local MySQL installation.
+
+The default database name is `gisu`. Make sure the credentials match your MySQL setup.
+
+## 3. Run the Application
+
+Open a terminal in the project folder and run:
 
 ```bash
 mvn spring-boot:run
 ```
 
-Then visit `http://localhost:8080`.
+Once the application starts, open http://localhost:8080 in your browser.
 
-## Included pages
-- Home
-- Register
-- Login / Logout
-- Dashboard
-- Insurance assessment (saved to database)
-- Insurance plans (read from database)
+## Features
+
+* User registration and login/logout
+* Session-based login state
+* Dashboard
+* Insurance assessment results saved to MySQL
+* Insurance plans loaded from MySQL
 
 ## Notes
-- This is a classroom prototype, not a production insurance or payment system.
-- The assessment recommendations use a simple budget/coverage filter, not AI.
-- A `payments` table is included for database-design coverage; no real payment processing is implemented.
-- Passwords are hashed before being stored. Use only fictional/test data.
+
+* This is a prototype for a class project.
+* Insurance recommendations use a basic budget and coverage filter, not AI.
+* The database includes a `payments` table, but payment processing is not implemented.
+* Passwords are hashed before being stored.
+* Use fictional or test information when trying the application.
