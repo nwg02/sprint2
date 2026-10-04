@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Dashboard</title><link rel="stylesheet" th:href="@{/styles.css}"></head>
+<body><div th:replace="~{fragments :: header}"></div><main>
+<h1>Dashboard</h1><p>Welcome, <strong th:text="${user.first_name}">Customer</strong>.</p>
+<p><a class="button" th:href="@{/assessment}">Complete an assessment</a> <a class="button" th:href="@{/plans}">View plans</a></p>
+<h2>Your saved assessments</h2>
+<p th:if="${#lists.isEmpty(assessments)}">You have not submitted an assessment yet.</p>
+<table th:if="${!#lists.isEmpty(assessments)}"><thead><tr><th>Age</th><th>Coverage</th><th>Monthly budget</th><th>Household size</th><th>Created</th></tr></thead>
+<tbody><tr th:each="a : ${assessments}"><td th:text="${a.age}"></td><td th:text="${a.coverage_type}"></td><td th:text="${a.monthly_budget}"></td><td th:text="${a.household_size}"></td><td th:text="${a.created_at}"></td></tr></tbody></table>
+</main><div th:replace="~{fragments :: footer}"></div></body></html>

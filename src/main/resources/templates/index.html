@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GISU Insurance Services</title><link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+<div th:replace="~{fragments :: header}"></div>
+<main>
+    <h1>Insurance Services United</h1>
+    <p>A simple portal to create an account, complete an insurance assessment, and review sample plan options.</p>
+    <p><a class="button" th:href="@{/register}">Create an account</a> <a class="button" th:href="@{/plans}">View plans</a></p>
+</main>
+<div th:replace="~{fragments :: footer}"></div>
+</body>
+</html>
